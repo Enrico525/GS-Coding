@@ -1,7 +1,5 @@
--- =============================================================
 -- AlertaBairro - Esquema do banco de dados (MySQL 8+)
 -- Execute como administrador:  mysql -u root -p < sql/01_schema.sql
--- =============================================================
 
 SET NAMES utf8mb4;
 
