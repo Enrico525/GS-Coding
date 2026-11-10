@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlertaBairro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>AlertaBairro</h1>
+    <p>Alertas de chuva forte e calor extremo por bairro, a partir da previsão do tempo.</p>
+  </header>
+
+  <main>
+    <section class="cartao">
+      <h2 id="titulo-form">Cadastrar bairro monitorado</h2>
+      <form id="form-bairro" novalidate>
+        <input type="hidden" id="bairro-id">
+        <div class="grade">
+          <label>Bairro <input id="nome" required maxlength="80" placeholder="Jardim Pantanal"></label>
+          <label>Cidade <input id="cidade" required maxlength="80" placeholder="São Paulo"></label>
+          <label>UF <input id="uf" required maxlength="2" placeholder="SP"></label>
+          <label>Latitude <input id="latitude" type="number" step="0.00001" min="-90" max="90" required></label>
+          <label>Longitude <input id="longitude" type="number" step="0.00001" min="-180" max="180" required></label>
+          <label>Risco principal
+            <select id="area_de_risco">
+              <option value="ALAGAMENTO">Alagamento</option>
+              <option value="DESLIZAMENTO">Deslizamento</option>
+              <option value="CALOR">Calor</option>
+              <option value="MISTO" selected>Misto</option>
+            </select>
+          </label>
+        </div>
+        <div class="acoes">
+          <button type="submit" id="btn-salvar">Cadastrar</button>
+          <button type="button" id="btn-cancelar" class="secundario" hidden>Cancelar edição</button>
+        </div>
+        <p id="mensagem" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="cartao">
+      <h2>Bairros monitorados</h2>
+      <div class="tabela">
+        <table>
+          <thead><tr><th>Bairro</th><th>Cidade/UF</th><th>Risco</th><th>Ações</th></tr></thead>
+          <tbody id="lista-bairros"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cartao">
+      <h2>Últimos alertas</h2>
+      <ul id="lista-alertas" class="alertas"></ul>
+    </section>
+  </main>
+
+  <footer>Dados meteorológicos: Open-Meteo.com (CC BY 4.0). Protótipo acadêmico com dados fictícios/abertos.</footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
