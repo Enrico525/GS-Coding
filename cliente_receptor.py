@@ -4,10 +4,14 @@ Uso:  python cliente_receptor.py --bairro 1
 """
 import argparse
 import json
+import os
 import socket
 import sys
 
 import config
+
+if os.name == "nt":
+    os.system("")  # liga as cores ANSI no terminal do Windows
 
 CORES = {"ATENCAO": "\033[93m", "ALERTA": "\033[38;5;208m", "EMERGENCIA": "\033[91m"}
 FIM = "\033[0m"

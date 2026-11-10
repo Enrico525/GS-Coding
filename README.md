@@ -5,6 +5,7 @@ Protótipo CitizenTech da Global Solution de **Coding for Security (FIAP)**: ale
 - **Cidadão:** moradores de bairros em área de risco de alagamento, deslizamento ou calor extremo.
 - **ODS:** 11 (Cidades e comunidades sustentáveis), 13 (Ação contra a mudança do clima), 3 (Saúde e bem-estar).
 - **Fonte externa:** [Open-Meteo](https://open-meteo.com) (gratuita, sem chave, licença CC BY 4.0).
+- **Relatório:** [`Relatorio_CidadesSeguras.pdf`](Relatorio_CidadesSeguras.pdf).
 
 ---
 
@@ -59,7 +60,8 @@ python -m venv venv
 ```
 
 Ative o ambiente:
-- **Windows (PowerShell):** `venv\Scripts\Activate.ps1`
+- **Windows (cmd ou terminal do PyCharm):** `venv\Scripts\activate`
+- **Windows (PowerShell):** `venv\Scripts\Activate.ps1`. Se aparecer erro de "execução de scripts desabilitada", rode uma vez `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` e tente de novo.
 - **Linux/macOS:** `source venv/bin/activate`
 
 ```bash
@@ -78,7 +80,10 @@ Abra `sql/02_usuario_app.sql`, troque `TROQUE_ESTA_SENHA` por uma senha forte e 
 mysql -u root -p < sql/02_usuario_app.sql
 ```
 
-> No Windows, se o comando `mysql` não for reconhecido, abra os arquivos no MySQL Workbench e execute-os (raio ⚡), na mesma ordem.
+**No Windows:**
+- O `<` não funciona no **PowerShell**. Rode esses comandos no **cmd** (Prompt de Comando) ou, no PowerShell, use `Get-Content sql\01_schema.sql | mysql -u root -p`.
+- Com **XAMPP**: abra o XAMPP Control Panel, clique em **Start** no MySQL e depois em **Shell**. O root do XAMPP vem sem senha, então use `mysql -u root` (sem o `-p`) e informe o caminho completo dos arquivos, por exemplo `mysql -u root < "C:\caminho\cidades-seguras\sql\01_schema.sql"`.
+- Se o comando `mysql` não for reconhecido, abra os arquivos no MySQL Workbench e execute-os (raio ⚡), na mesma ordem.
 
 ### 4. Configurar o `.env`
 
@@ -87,7 +92,7 @@ Copie o modelo e coloque a senha definida no passo anterior:
 - **Windows:** `copy .env.example .env`
 - **Linux/macOS:** `cp .env.example .env`
 
-Edite `DB_PASSWORD` no `.env`. Esse arquivo nunca deve ir para o Git (já está no `.gitignore`).
+Edite `DB_PASSWORD` no `.env`. Se a senha tiver `#`, coloque-a entre aspas (`DB_PASSWORD="minha#senha"`), senão o `#` é lido como início de comentário. Esse arquivo nunca deve ir para o Git (já está no `.gitignore`).
 
 ### 5. Rodar
 
