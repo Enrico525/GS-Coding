@@ -6,5 +6,5 @@
 -- =============================================================
 
 CREATE USER IF NOT EXISTS 'alerta_app'@'localhost' IDENTIFIED BY 'TROQUE_ESTA_SENHA';
-GRANT SELECT, INSERT, UPDATE, DELETE ON alertabairro.* TO 'alerta_app'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON cidades_seguras.* TO 'alerta_app'@'localhost';
 FLUSH PRIVILEGES;

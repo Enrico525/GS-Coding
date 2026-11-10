@@ -27,7 +27,7 @@ def exibir(linha):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Receptor de alertas do AlertaBairro")
+    parser = argparse.ArgumentParser(description="Receptor de alertas do projeto Cidades Seguras")
     parser.add_argument("--bairro", type=int, required=True, help="id do bairro a acompanhar")
     parser.add_argument("--host", default=config.SOCKET_HOST)
     parser.add_argument("--porta", type=int, default=config.SOCKET_PORT)

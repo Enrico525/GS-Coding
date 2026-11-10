@@ -1,13 +1,13 @@
--- AlertaBairro - Esquema do banco de dados (MySQL 8+)
+-- Cidades Seguras - Esquema do banco de dados (MySQL 8+)
 -- Execute como administrador:  mysql -u root -p < sql/01_schema.sql
 
 SET NAMES utf8mb4;
 
-CREATE DATABASE IF NOT EXISTS alertabairro
+CREATE DATABASE IF NOT EXISTS cidades_seguras
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-USE alertabairro;
+USE cidades_seguras;
 
 -- Bairros/áreas monitoradas. Não há NENHUM dado pessoal:
 -- a solução monitora LUGARES, não pessoas (minimização - LGPD art. 6º, III).

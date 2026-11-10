@@ -3,7 +3,7 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 
-_logger = logging.getLogger("alertabairro")
+_logger = logging.getLogger("cidades_seguras")
 
 
 def configurar_log(caminho):

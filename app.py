@@ -1,4 +1,4 @@
-"""AlertaBairro - API REST (Flask) de alertas de chuva forte e calor extremo por bairro.
+"""Cidades Seguras - API REST (Flask) de alertas de chuva forte e calor extremo por bairro.
 
 Rotas:
     GET    /api/bairros                 lista bairros monitorados            200

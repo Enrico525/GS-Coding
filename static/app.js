@@ -1,4 +1,4 @@
-// Front-end mínimo que consome a API do AlertaBairro.
+// Front-end mínimo que consome a API do projeto Cidades Seguras.
 // Segurança: todo texto vindo da API entra via textContent (nunca innerHTML) -> sem XSS.
 "use strict";
 

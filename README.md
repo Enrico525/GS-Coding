@@ -1,4 +1,4 @@
-# AlertaBairro
+# Cidades Seguras
 
 Protótipo CitizenTech da Global Solution de **Coding for Security (FIAP)**: alertas de **chuva forte** e **calor extremo** por bairro, gerados a partir da previsão do tempo e enviados a receptores da comunidade (associação de moradores, escola, UBS) por **sockets TCP**.
 
@@ -17,7 +17,7 @@ Protótipo CitizenTech da Global Solution de **Coding for Security (FIAP)**: ale
                     (clima.py → Open-Meteo)              │  ALERTA {json}
                                                          ▼
                                            cliente_receptor.py (na comunidade)
- Todas as ações → logs/alertabairro.log (data/hora | ação | resultado)
+ Todas as ações → logs/cidades_seguras.log (data/hora | ação | resultado)
 ```
 
 | Arquivo | Responsabilidade |
@@ -53,8 +53,8 @@ Nenhuma tabela guarda dados pessoais: o sistema monitora **lugares**, não pesso
 ### 2. Baixar o projeto e criar o ambiente virtual
 
 ```bash
-git clone <url-do-repositorio> alertabairro
-cd alertabairro
+git clone https://github.com/Enrico525/GS-Coding.git cidades-seguras
+cd cidades-seguras
 python -m venv venv
 ```
 
@@ -127,7 +127,7 @@ Na página, clique em **Verificar clima** no bairro 1: se a previsão indicar ri
 | 8 | Clicar em "Verificar clima" | Alertas na lista (se houver risco) e no terminal do receptor |
 | 9 | Desligar a internet e verificar clima | "Serviço de previsão do tempo indisponível" (502) |
 | 10 | Parar o MySQL e recarregar a página | "Serviço temporariamente indisponível" (503), sem detalhes técnicos |
-| 11 | Abrir `logs/alertabairro.log` | Uma linha por ação, com data/hora, ação e resultado |
+| 11 | Abrir `logs/cidades_seguras.log` | Uma linha por ação, com data/hora, ação e resultado |
 | 12 | Clicar em "Verificar clima" duas vezes seguidas | Na segunda: "Aguarde Ns..." (429) |
 
 ### 8. Rodar os testes automatizados
